@@ -35,7 +35,7 @@ License:
 	
 	The best way to use this class is to make your stub class that inherits after TGenFoamDecay and redefine Integrand() method filling it with a integrand that will be integrated over LIPS (Lorent Invariant Phase Space). The volume element of LIPS is :
 	 
-	\f$dLIPS = (2\pi)^4 \delta^{(4)}(P-\sum_{i=1}^{n}p_{i}) \prod_{i=1}^{n} \frac{d^{3}p_{i}}{(2\pi)^3 2E_{i}}\f$
+	\f$(dLIPS = (2\pi)^4 \delta^{(4)}(P-\sum_{i=1}^{n}p_{i}) \prod_{i=1}^{n} \frac{d^{3}p_{i}}{(2\pi)^3 2E_{i}}\f$
 	
 	See: H.Pilkhun, The Interactions of Hadrons North-Holland 1967, M.D. Schwartz, Quantum Field Theory and the Standard Model, Cambridge UP 2013
 	
@@ -58,6 +58,7 @@ License:
 	
 
 */
+
 
 #include <TGenInterface.h>
 
@@ -84,6 +85,8 @@ private:
    Double_t     fTeCmTm;         // total energy in the C.M. minus the total mass
    TLorentzVector  fDecPro[18];  //kinematics of the generated particles
    Int_t       seed; 			 //seed for pseudorandom generator
+
+   Int_t kMAXP;					 //max number of particles (relict from TGenPhaseSpace)
 
    TDecay _decay;				 //decay engine
    TFoam*  _foam;				 //adaptive integrator

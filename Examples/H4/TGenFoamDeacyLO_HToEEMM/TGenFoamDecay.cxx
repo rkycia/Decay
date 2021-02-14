@@ -25,7 +25,7 @@ License:
 #include "TGenFoamDecay.h"
 
 
-const Int_t kMAXP = 18;
+//const Int_t kMAXP = 18;
 
 
 
@@ -128,6 +128,8 @@ Bool_t TGenFoamDecay::SetDecay(TLorentzVector &P, Int_t nt,
    const Double_t *mass) 
 {
 
+   kMAXP = nt;
+
    Int_t n;
    fNt = nt;
    if (fNt<2 || fNt>18) return kFALSE;  // no more then 18 particle
@@ -145,7 +147,10 @@ Bool_t TGenFoamDecay::SetDecay(TLorentzVector &P, Int_t nt,
 
 	// initialize FOAM
 	//=========================================================
-	cout<<"*****   Foam version "<< _foam->GetVersion() <<"    *****"<<endl;
+	if (Chat > 0 )
+	{
+		cout<<"*****   Foam version "<< _foam->GetVersion() <<"    *****"<<endl;
+	}
 	_foam->SetkDim(        3*fNt-4);      // Mandatory!!!
 	_foam->SetnCells(      nCells);    // optional
 	_foam->SetnSampl(      nSampl);    // optional

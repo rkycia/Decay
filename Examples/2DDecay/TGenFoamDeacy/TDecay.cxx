@@ -27,7 +27,7 @@ License:
 #include "TDecay.h"
 
 
-const Int_t kMAXP = 18;
+//const Int_t kMAXP = 18;
 
 //_____________________________________________________________________________________
 Double_t TDecay::PDK(Double_t a, Double_t b, Double_t c) 
@@ -202,10 +202,11 @@ TLorentzVector *TDecay::GetDecay(Int_t n)
 }
 
 //_____________________________________________________________________________________
-Bool_t TDecay::SetDecay(TLorentzVector &P, Int_t nt, 
-   const Double_t *mass) 
+Bool_t TDecay::SetDecay(TLorentzVector &P, Int_t nt, const Double_t *mass) 
 {
 
+   kMAXP = nt;
+   
    Int_t n;
    fNt = nt;
    if (fNt<2 || fNt>18) return kFALSE;  // no more then 18 particle

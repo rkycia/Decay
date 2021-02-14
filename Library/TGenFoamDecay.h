@@ -59,6 +59,7 @@ License:
 
 */
 
+
 #include <TGenInterface.h>
 
 #include <TLorentzVector.h>
@@ -84,6 +85,8 @@ private:
    Double_t     fTeCmTm;         // total energy in the C.M. minus the total mass
    TLorentzVector  fDecPro[18];  //kinematics of the generated particles
    Int_t       seed; 			 //seed for pseudorandom generator
+
+   Int_t kMAXP;					 //max number of particles (relict from TGenPhaseSpace)
 
    TDecay _decay;				 //decay engine
    TFoam*  _foam;				 //adaptive integrator

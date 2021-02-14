@@ -25,7 +25,7 @@ License:
 #include "TGenDecay.h"
 
 
-const Int_t kMAXP = 18;
+//const Int_t kMAXP = 18;
 
 
 //__________________________________________________________________________________________________
@@ -99,9 +99,10 @@ TLorentzVector *TGenDecay::GetDecay(Int_t n)
 }
 
 //_____________________________________________________________________________________
-Bool_t TGenDecay::SetDecay(TLorentzVector &P, Int_t nt, 
-   const Double_t *mass) 
+Bool_t TGenDecay::SetDecay(TLorentzVector &P, Int_t nt, const Double_t *mass) 
 {
+
+   kMAXP = nt;
 
    Int_t n;
    fNt = nt;

@@ -73,6 +73,8 @@ private:
    TLorentzVector  fDecPro[18];  //kinematics of the generated particles 
    Int_t         seed;			 //seed for pseudorandom number generator
 
+   Int_t kMAXP;					 //max number of particles (relict from TGenPhaseSpace)
+
    TDecay _decay;				 //decay engine
    TRandom3 _pseRan;			 //pseudorandom numbers
    

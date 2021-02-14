@@ -51,7 +51,7 @@ License:
 */
 
 
-#include "TLorentzVector.h"
+#include <TLorentzVector.h>
 
 #include <iostream>       // std::cin, std::cout
 #include <queue>          // std::queue
@@ -67,6 +67,8 @@ private:
    Double_t     fBeta[3];        // betas of decaying particle
    Double_t     fTeCmTm;         // total energy in the C.M. minus the total mass
    TLorentzVector  fDecPro[18];  //kinematics of the generated particles 
+
+   Int_t kMAXP;					 //max number of particles (relict from TGenPhaseSpace)
 
    Double_t PDK(Double_t a, Double_t b, Double_t c);
    
@@ -97,7 +99,7 @@ public:
    
    /// Generate a single decay
    /// @param rnd a queue of 3*nt-4 random numbers from external source.
-   Double_t        Generate(std::queue<double> &rnd);
+   Double_t Generate(std::queue<double> &rnd);
    
    /// @returns 4-vector of n-th product of decay
    /// @param n  number of final particle to get from range 1...nt
