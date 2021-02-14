@@ -243,7 +243,7 @@ int main()
 	cout << "====== Events generated, entering Finalize" << endl;
 	
 	double integral = sumIntegrand / (double) NevTot;
-	double error = ( pow(sumIntegrand,2) - sumIntegrand2/ (double) NevTot) * sqrt(NevTot);
+	double error = sqrt(abs( pow(integral,2) - sumIntegrand2/(double) NevTot ))/sqrt(NevTot);
 
 	cout << "Integral = " << integral << " +- " << error << endl;
 
